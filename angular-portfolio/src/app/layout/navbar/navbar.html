@@ -1,0 +1,43 @@
+<nav
+  class="fixed w-full z-50 transition-all duration-300"
+  [ngClass]="isScrolled ? 'bg-gray-900/90 backdrop-blur shadow-lg' : 'bg-transparent'"
+>
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+    <!-- Logo -->
+    <h1 class="text-xl font-bold text-white tracking-wide">
+      Kanish.dev
+    </h1>
+
+    <!-- Desktop Menu -->
+    <ul class="hidden md:flex gap-8 text-gray-300 font-medium">
+      <li><a href="#home" class="hover:text-white transition">Home</a></li>
+      <li><a href="#about" class="hover:text-white transition">About</a></li>
+      <li><a href="#skills" class="hover:text-white transition">Skills</a></li>
+      <li><a href="#projects" class="hover:text-white transition">Projects</a></li>
+      <li><a href="#experience" class="hover:text-white transition">Experience</a></li>
+      <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
+    </ul>
+
+    <!-- Mobile Button -->
+    <button
+      class="md:hidden text-white"
+      (click)="toggleMenu()"
+    >
+      ☰
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div
+    *ngIf="isMenuOpen"
+    class="md:hidden bg-gray-900 px-6 pb-4 space-y-4 text-gray-300"
+  >
+    <a href="#home" (click)="closeMenu()" class="block">Home</a>
+    <a href="#about" (click)="closeMenu()" class="block">About</a>
+    <a href="#skills" (click)="closeMenu()" class="block">Skills</a>
+    <a href="#projects" (click)="closeMenu()" class="block">Projects</a>
+    <a href="#experience" (click)="closeMenu()" class="block">Experience</a>
+    <a href="#contact" (click)="closeMenu()" class="block">Contact</a>
+  </div>
+</nav>

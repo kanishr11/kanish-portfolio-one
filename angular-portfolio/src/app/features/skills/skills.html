@@ -1,0 +1,33 @@
+<section
+  id="skills"
+  class="py-20 bg-gray-950 text-white px-6"
+>
+  <div class="max-w-6xl mx-auto text-center">
+
+    <h2 class="text-3xl md:text-4xl font-bold mb-12 animate-fade-in">
+      Skills
+    </h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+
+      <div
+        *ngFor="let group of skillGroups"
+        class="animate-fade-in bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-xl transition text-left"
+      >
+        <h3 class="text-blue-400 font-semibold text-sm uppercase tracking-wider mb-4">
+          {{ group.category }}
+        </h3>
+        <div class="flex flex-wrap gap-2">
+          <span
+            *ngFor="let item of group.items"
+            class="text-sm bg-gray-700 px-3 py-1 rounded-full text-gray-300 hover:bg-blue-600 hover:text-white transition"
+          >
+            {{ item }}
+          </span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
