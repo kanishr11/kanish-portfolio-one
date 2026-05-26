@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './layout/navbar/navbar';
 import { HeroComponent } from './features/hero/hero';
 import { AboutComponent } from './features/about/about';
@@ -14,7 +13,6 @@ import { ScrollTopComponent } from './layout/scroll-top/scroll-top';
   selector: 'app-root',
   standalone: true,
   imports: [
-    RouterOutlet,
     NavbarComponent,
     HeroComponent,
     AboutComponent,
