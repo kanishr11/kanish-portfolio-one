@@ -1,4 +1,7 @@
 {
+  "engines": {
+    "node": "24.x"
+  },
   "dependencies": {
     "@angular/platform-browser-dynamic": "^21.2.14"
   }
