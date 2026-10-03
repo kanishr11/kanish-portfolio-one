@@ -3,7 +3,10 @@ import { CommonModule } from '@angular/common';
 
 interface Project {
   title: string;
-  description: string;
+  status: string;
+  type: string;
+  summary: string;
+  details: string[];
   tech: string[];
   github: string;
   live: string;
@@ -16,49 +19,36 @@ interface Project {
   templateUrl: './projects.html'
 })
 export class ProjectsComponent {
-
   projects: Project[] = [
     {
-      title: 'Leave Management System',
-      description: 'Full-stack enterprise system with role-based authentication and multi-level approval workflows. Built REST APIs and an Angular UI for managing employee leave requests with real-time status tracking.',
-      tech: ['Angular', 'Spring Boot', 'PostgreSQL', 'RBAC', 'REST APIs'],
-      github: 'https://github.com/kanishr11/leave-management-uixu',
+      title: 'Enterprise HRMS & Leave Management Platform',
+      status: 'Currently In Progress',
+      type: 'Independent Product',
+      summary: 'A tenant-aware enterprise HRMS focused on employee lifecycle management, multi-role access, and leave workflows.',
+      details: [
+        'Authentication and authorization using Spring Security and JWT.',
+        'Company and employee management with RBAC-based access control.',
+        'Leave workflows, permissions, and dashboard-driven insight surfaces.',
+        'Multi-tenant architecture with modular system design.'
+      ],
+      tech: ['Angular', 'TypeScript', 'Java', 'Spring Boot', 'PostgreSQL', 'JWT', 'RBAC', 'Spring Security'],
+      github: 'https://github.com/kanishr11',
       live: '#'
     },
     {
-      title: 'E-Commerce Platform',
-      description: 'Feature-complete e-commerce platform with product management, shopping cart, admin dashboard, and simulated payment flow. Integrated Angular frontend with Spring Boot backend APIs.',
-      tech: ['Angular', 'Spring Boot', 'MySQL', 'REST APIs'],
-      github: 'https://github.com/kanishr11/ClassyGlow_pb',
-      live: 'https://classy-front-end.vercel.app/'
-    },
-    {
-      title: 'Angular Portfolio',
-      description: 'Modern, responsive personal portfolio website built with Angular 21 and Tailwind CSS. Features smooth animations, mobile-first design, reactive contact form, and clean component architecture.',
-      tech: ['Angular', 'Tailwind CSS', 'TypeScript', 'Reactive Forms'],
-      github: 'https://github.com/kanishr11/Protfolio',
-      live: 'https://protfolio-rho-lovat.vercel.app/'
-    },
-    {
-      title: 'Gallery Application',
-      description:'Responsive gallery application developed using Angular and Tailwind CSS with clean UI components, image management features, and modern frontend architecture.',
-      tech: ['Angular', 'Tailwind CSS', 'TypeScript'],
-      github: 'https://github.com/kanishr11/gallery-applaction',
-      live: 'https://gallery-applaction.vercel.app/'
-      },
-      {
-      title: 'Movie Booking System',
-      description:'Full-stack movie booking application developed during college using React, Node.js, Express.js, and MongoDB with user authentication and booking functionality.',
-      tech: ['React', 'Node.js', 'Express.js', 'MongoDB'],
-      github: 'https://github.com/kanishr11/movie_booking_app',
-      live: 'https://movie-booking-wine.vercel.app/'
-      },
-      {
-      title: 'Temperature Converter',
-      description:'Simple temperature converter web application built using HTML, CSS, and JavaScript with responsive UI and real-time unit conversion functionality.',
-      tech: ['HTML', 'CSS', 'JavaScript'],
-      github: 'https://github.com/kanishr11/temperature_task_3',
-      live: 'https://temperature-task-3.vercel.app/'
+      title: 'MERN Stack E-Commerce Application',
+      status: 'Personal Project',
+      type: 'Full Stack Project',
+      summary: 'A full-stack shopping application built with React, Node.js, Express.js, and MongoDB to model product browsing and purchase flows.',
+      details: [
+        'Product listing, cart, and checkout flows for end-user shopping journeys.',
+        'Authentication and user-focused storefront experiences.',
+        'Admin-related product and order workflows.',
+        'Payment integration for a complete purchase flow.'
+      ],
+      tech: ['React', 'JavaScript', 'Node.js', 'Express.js', 'MongoDB', 'Payment Integration'],
+      github: 'https://github.com/kanishr11',
+      live: '#'
     }
   ];
 }

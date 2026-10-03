@@ -15,30 +15,18 @@ interface Experience {
   templateUrl: './experience.html'
 })
 export class ExperienceComponent {
-
   experiences: Experience[] = [
     {
       role: 'Associate Software Engineer',
-      company: 'TekFilo Innovation Pvt Ltd',
-      duration: 'May 2024 – Present | Coimbatore, India',
+      company: 'TekFilo Innovation Pvt. Ltd.',
+      duration: 'May 2025 – Present | Coimbatore, Tamil Nadu',
       description: [
-        'Completed a 3-month internship in 2 months and was offered a full-time role ahead of schedule due to high performance.',
-        'Serve as the sole production deployment developer — independently managing all live releases and ensuring application uptime and stability.',
-        'Delivered 15+ enterprise-grade modules using Angular 14+ and Spring Boot within the first year.',
-        'Designed and implemented a dynamic Role-Based Access Control (RBAC) system, enabling fine-grained access management across the platform.',
-        'Integrated RESTful backend APIs with reactive Angular UIs, enabling real-time data handling for enterprise users.',
-        'Worked with PostgreSQL, MySQL, and MongoDB for database design and optimization.',
-        'Leveraged AI tools and prompt engineering to accelerate development cycles and improve code quality.'
-      ]
-    },
-    {
-      role: 'B.Tech — Information Technology',
-      company: 'Karpagam College of Engineering',
-      duration: '2021 – 2025 | CGPA: 7.6',
-      description: [
-        'Graduated with a B.Tech in Information Technology.',
-        'Built full-stack projects including a Leave Management System and an E-Commerce Platform.',
-        'Gained hands-on experience in Java, Angular, Spring Boot, and database systems.'
+        'Contributing to production ERP application development across frontend, backend, API integration, and database layers.',
+        'Working with Angular, TypeScript, Java, Spring Boot, and REST APIs to build and improve enterprise workflows.',
+        'Handling production debugging, root cause analysis, API troubleshooting, database investigation, and performance optimization.',
+        'Supporting 20+ ERP modules across trading, manufacturing, inventory, accounts, and reports.',
+        'Working with PostgreSQL to analyze data issues and support production stability in business-critical workflows.',
+        'Operating within GitHub-based development practices while maintaining and improving existing source code in real production environments.'
       ]
     }
   ];

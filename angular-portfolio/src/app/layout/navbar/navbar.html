@@ -1,43 +1,51 @@
 <nav
-  class="fixed w-full z-50 transition-all duration-300"
-  [ngClass]="isScrolled ? 'bg-gray-900/90 backdrop-blur shadow-lg' : 'bg-transparent'"
+  class="fixed inset-x-0 top-0 z-50 transition-all duration-300"
+  [class]="isScrolled ? 'border-b border-slate-800/80 bg-[#0b0f14]/85 backdrop-blur-xl shadow-[0_18px_50px_rgba(2,6,23,0.45)]' : 'bg-transparent'"
 >
-  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+  <div class="section-shell flex items-center justify-between py-4">
+    <a href="#home" aria-label="Go to homepage" class="text-sm font-semibold uppercase tracking-[0.22em] text-slate-50 transition hover:text-blue-300">
+      Kanish R
+    </a>
 
-    <!-- Logo -->
-    <h1 class="text-xl font-bold text-white tracking-wide">
-      Kanish.dev
-    </h1>
-
-    <!-- Desktop Menu -->
-    <ul class="hidden md:flex gap-8 text-gray-300 font-medium">
-      <li><a href="#home" class="hover:text-white transition">Home</a></li>
-      <li><a href="#about" class="hover:text-white transition">About</a></li>
-      <li><a href="#skills" class="hover:text-white transition">Skills</a></li>
-      <li><a href="#projects" class="hover:text-white transition">Projects</a></li>
-      <li><a href="#experience" class="hover:text-white transition">Experience</a></li>
-      <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
+    <ul class="hidden items-center gap-7 text-sm text-slate-300 md:flex">
+      <li><a href="#about" class="transition hover:text-white">About</a></li>
+      <li><a href="#engineering" class="transition hover:text-white">Engineering</a></li>
+      <li><a href="#experience" class="transition hover:text-white">Experience</a></li>
+      <li><a href="#skills" class="transition hover:text-white">Skills</a></li>
+      <li><a href="#projects" class="transition hover:text-white">Projects</a></li>
+      <li><a href="#contact" class="transition hover:text-white">Contact</a></li>
     </ul>
 
-    <!-- Mobile Button -->
+    <div class="hidden items-center md:flex">
+      <a href="assets/Kanish_R_Full_Stack_Developer_Resume.pdf" target="_blank" rel="noreferrer" class="primary-button text-xs uppercase tracking-[0.16em]">
+        Resume
+      </a>
+    </div>
+
     <button
-      class="md:hidden text-white"
+      type="button"
+      class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-700 bg-slate-900/80 text-lg text-slate-100 md:hidden"
+      aria-label="Toggle navigation menu"
+      [attr.aria-expanded]="isMenuOpen"
       (click)="toggleMenu()"
     >
       ☰
     </button>
   </div>
 
-  <!-- Mobile Menu -->
-  <div
-    *ngIf="isMenuOpen"
-    class="md:hidden bg-gray-900 px-6 pb-4 space-y-4 text-gray-300"
-  >
-    <a href="#home" (click)="closeMenu()" class="block">Home</a>
-    <a href="#about" (click)="closeMenu()" class="block">About</a>
-    <a href="#skills" (click)="closeMenu()" class="block">Skills</a>
-    <a href="#projects" (click)="closeMenu()" class="block">Projects</a>
-    <a href="#experience" (click)="closeMenu()" class="block">Experience</a>
-    <a href="#contact" (click)="closeMenu()" class="block">Contact</a>
-  </div>
+  @if (isMenuOpen) {
+    <div class="border-t border-slate-800 bg-[#0d1117]/95 px-4 py-4 md:hidden">
+      <div class="flex flex-col gap-3 text-sm text-slate-200">
+        <a href="#about" (click)="closeMenu()" class="rounded-lg px-2 py-2 transition hover:bg-slate-800 hover:text-white">About</a>
+        <a href="#engineering" (click)="closeMenu()" class="rounded-lg px-2 py-2 transition hover:bg-slate-800 hover:text-white">Engineering</a>
+        <a href="#experience" (click)="closeMenu()" class="rounded-lg px-2 py-2 transition hover:bg-slate-800 hover:text-white">Experience</a>
+        <a href="#skills" (click)="closeMenu()" class="rounded-lg px-2 py-2 transition hover:bg-slate-800 hover:text-white">Skills</a>
+        <a href="#projects" (click)="closeMenu()" class="rounded-lg px-2 py-2 transition hover:bg-slate-800 hover:text-white">Projects</a>
+        <a href="#contact" (click)="closeMenu()" class="rounded-lg px-2 py-2 transition hover:bg-slate-800 hover:text-white">Contact</a>
+        <a href="assets/Kanish_R_Full_Stack_Developer_Resume.pdf" target="_blank" rel="noreferrer" (click)="closeMenu()" class="primary-button mt-2 text-xs uppercase tracking-[0.16em]">
+          Resume
+        </a>
+      </div>
+    </div>
+  }
 </nav>
