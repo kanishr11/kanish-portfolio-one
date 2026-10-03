@@ -1,68 +1,52 @@
-<section
-  id="projects"
-  class="py-20 bg-gray-900 text-white px-6"
->
-  <div class="max-w-6xl mx-auto">
-
-    <!-- Title -->
-    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 animate-fade-in">
-      Projects
-    </h2>
-
-    <!-- Grid -->
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-      <!-- Card -->
-      <div
-        *ngFor="let project of projects"
-        class="animate-fade-in bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition transform hover:-translate-y-2 flex flex-col justify-between"
-      >
-
-        <!-- Content -->
-        <div>
-          <h3 class="text-xl font-semibold mb-3">
-            {{ project.title }}
-          </h3>
-
-          <p class="text-gray-400 mb-4 text-sm leading-relaxed">
-            {{ project.description }}
-          </p>
-
-          <!-- Tech Stack -->
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span
-              *ngFor="let tech of project.tech"
-              class="text-xs bg-gray-700 px-3 py-1 rounded-full text-gray-300"
-            >
-              {{ tech }}
-            </span>
-          </div>
-        </div>
-
-        <!-- Buttons -->
-        <div class="flex gap-4 mt-4">
-
-          <a
-            [href]="project.github"
-            target="_blank"
-            class="flex-1 text-center px-4 py-2 border border-gray-600 rounded-lg hover:border-white transition text-sm"
-          >
-            GitHub
-          </a>
-
-          <a
-            [href]="project.live"
-            target="_blank"
-            class="flex-1 text-center px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition text-sm"
-          >
-            Live Demo
-          </a>
-
-        </div>
-
-      </div>
-
+<section id="projects" class="py-20 sm:py-24">
+  <div class="section-shell">
+    <div class="mb-12 max-w-2xl">
+      <span class="section-tag">Projects</span>
+      <h2 class="section-heading mt-5">Building product experiences, enterprise workflows, and independent software.</h2>
     </div>
 
+    <div class="space-y-8">
+      @for (project of projects; track project.title) {
+        <article class="glass-card overflow-hidden p-5 sm:p-8 lg:p-10">
+          <div class="grid gap-8 lg:grid-cols-2 lg:items-center">
+            <div class="order-2 lg:order-1">
+              <div class="flex flex-wrap items-center gap-3">
+                <span class="rounded-full border border-blue-500/30 bg-blue-500/10 px-3 py-1 text-[10px] uppercase tracking-[0.18em] text-blue-100">{{ project.status }}</span>
+                <span class="text-xs uppercase tracking-[0.18em] text-slate-400">{{ project.type }}</span>
+              </div>
+
+              <h3 class="mt-5 text-2xl font-semibold tracking-tight text-white sm:text-3xl">{{ project.title }}</h3>
+
+              <p class="mt-4 max-w-xl text-base leading-7 text-slate-300">{{ project.summary }}</p>
+
+              <div class="mt-6 flex flex-wrap gap-2">
+                @for (tech of project.tech; track tech) {
+                  <span class="tech-pill">{{ tech }}</span>
+                }
+              </div>
+
+              <div class="mt-8 flex flex-wrap gap-3">
+                <a [href]="project.github" target="_blank" rel="noreferrer" class="action-button">GitHub</a>
+                <a [href]="project.live" target="_blank" rel="noreferrer" class="primary-button">View Project</a>
+              </div>
+            </div>
+
+            <div class="order-1 lg:order-2">
+              <div class="rounded-2xl border border-slate-700 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-800 p-5 sm:p-6">
+                <p class="text-xs uppercase tracking-[0.2em] text-slate-400">Core focus</p>
+                <ul class="mt-5 space-y-4 text-sm text-slate-200">
+                  @for (detail of project.details; track detail) {
+                    <li class="flex gap-3">
+                      <span class="mt-1 h-2 w-2 rounded-full bg-blue-400"></span>
+                      <span>{{ detail }}</span>
+                    </li>
+                  }
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+      }
+    </div>
   </div>
 </section>

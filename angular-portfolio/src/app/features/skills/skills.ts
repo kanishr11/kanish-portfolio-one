@@ -15,28 +15,32 @@ interface SkillGroup {
 export class SkillsComponent {
   skillGroups: SkillGroup[] = [
     {
-      category: 'Languages & Frameworks',
-      items: ['Java (8/17)', 'Spring Boot', 'Angular 14+', 'TypeScript', 'JavaScript']
-    },
-    {
       category: 'Frontend',
-      items: ['Angular Material', 'Reactive Forms', 'Tailwind CSS', 'HTML5', 'CSS3']
+      items: ['Angular', 'TypeScript', 'RxJS', 'HTML', 'CSS', 'Tailwind CSS']
     },
     {
-      category: 'Backend & APIs',
-      items: ['REST APIs', 'Microservices', 'API Integration', 'RBAC Systems']
+      category: 'Backend',
+      items: ['Java', 'Spring Boot', 'REST APIs', 'Spring Security']
     },
     {
-      category: 'Databases',
-      items: ['PostgreSQL', 'MySQL', 'MongoDB']
+      category: 'Database',
+      items: ['PostgreSQL', 'SQL', 'pgAdmin']
     },
     {
-      category: 'Tools & DevOps',
-      items: ['Git', 'GitHub', 'Postman', 'PgAdmin', 'Production Deployment']
+      category: 'Security',
+      items: ['JWT', 'RBAC', 'Authentication', 'Authorization']
     },
     {
-      category: 'AI & Productivity',
-      items: ['Prompt Engineering', 'AI-assisted Development']
+      category: 'Engineering Tools',
+      items: ['Git', 'GitHub', 'Postman', 'Maven']
+    },
+    {
+      category: 'Production Engineering',
+      items: ['Debugging', 'Root Cause Analysis', 'API Troubleshooting', 'Performance Optimization']
+    },
+    {
+      category: 'Project Stack',
+      items: ['React', 'Node.js', 'Express.js', 'MongoDB', 'JavaScript']
     }
   ];
 }

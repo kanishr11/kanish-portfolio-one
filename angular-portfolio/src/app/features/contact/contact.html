@@ -1,72 +1,62 @@
-<section
-  id="contact"
-  class="py-20 bg-gray-900 text-white px-6"
->
-  <div class="max-w-4xl mx-auto">
+<section id="contact" class="py-20 sm:py-24">
+  <div class="section-shell">
+    <div class="glass-card overflow-hidden p-6 sm:p-8 lg:p-10">
+      <div class="grid gap-8 lg:grid-cols-[1fr_1.1fr] lg:items-center">
+        <div>
+          <span class="section-tag">Let’s connect</span>
+          <h2 class="section-heading mt-5">Open to opportunities in product engineering and full-stack development.</h2>
+          <p class="mt-5 max-w-lg text-base leading-7 text-slate-300">
+            I’m interested in roles where I can contribute across frontend, API, backend, and database layers while continuing to grow as a production-focused software engineer.
+          </p>
 
-    <!-- Title -->
-    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 animate-fade-in">
-      Contact Me
-    </h2>
+          <div class="mt-8 space-y-4 text-sm text-slate-200">
+            <a href="mailto:kanishr110@gmail.com" class="flex items-center gap-3 transition hover:text-white">
+              <span class="text-blue-300">Email</span>
+              <span class="text-slate-300">kanishr110@gmail.com</span>
+            </a>
+            <a href="https://linkedin.com/in/kanish11" target="_blank" rel="noreferrer" class="flex items-center gap-3 transition hover:text-white">
+              <span class="text-blue-300">LinkedIn</span>
+              <span class="text-slate-300">linkedin.com/in/kanish11</span>
+            </a>
+            <a href="https://github.com/kanishr11" target="_blank" rel="noreferrer" class="flex items-center gap-3 transition hover:text-white">
+              <span class="text-blue-300">GitHub</span>
+              <span class="text-slate-300">github.com/kanishr11</span>
+            </a>
+            <div class="flex items-center gap-3">
+              <span class="text-blue-300">Location</span>
+              <span class="text-slate-300">Coimbatore, Tamil Nadu</span>
+            </div>
+          </div>
+        </div>
 
-    <!-- Form -->
-    <form
-      [formGroup]="contactForm"
-      (ngSubmit)="onSubmit()"
-      class="bg-gray-800 p-8 rounded-2xl shadow-lg space-y-6 animate-fade-in"
-    >
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="space-y-5 rounded-2xl border border-slate-800 bg-slate-950/70 p-5 sm:p-6">
+          <div>
+            <label for="name" class="mb-2 block text-sm text-slate-200">Name</label>
+            <input id="name" type="text" formControlName="name" class="w-full rounded-xl border border-slate-700 bg-slate-900 px-4 py-3 text-slate-50 outline-none transition focus:border-blue-500" />
+            @if (submitted && f['name'].errors) {
+              <p class="mt-2 text-sm text-red-300">Name must be at least 3 characters.</p>
+            }
+          </div>
 
-      <!-- Name -->
-      <div>
-        <label class="block mb-2 text-sm text-gray-300">Name</label>
-        <input
-          type="text"
-          formControlName="name"
-          class="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500"
-        />
+          <div>
+            <label for="email" class="mb-2 block text-sm text-slate-200">Email</label>
+            <input id="email" type="email" formControlName="email" class="w-full rounded-xl border border-slate-700 bg-slate-900 px-4 py-3 text-slate-50 outline-none transition focus:border-blue-500" />
+            @if (submitted && f['email'].errors) {
+              <p class="mt-2 text-sm text-red-300">Enter a valid email address.</p>
+            }
+          </div>
 
-        <p *ngIf="submitted && f['name'].errors" class="text-red-400 text-sm mt-1">
-          Name must be at least 3 characters
-        </p>
+          <div>
+            <label for="message" class="mb-2 block text-sm text-slate-200">Message</label>
+            <textarea id="message" rows="5" formControlName="message" class="w-full rounded-xl border border-slate-700 bg-slate-900 px-4 py-3 text-slate-50 outline-none transition focus:border-blue-500"></textarea>
+            @if (submitted && f['message'].errors) {
+              <p class="mt-2 text-sm text-red-300">Message must be at least 10 characters.</p>
+            }
+          </div>
+
+          <button type="submit" class="primary-button w-full">Send Message</button>
+        </form>
       </div>
-
-      <!-- Email -->
-      <div>
-        <label class="block mb-2 text-sm text-gray-300">Email</label>
-        <input
-          type="email"
-          formControlName="email"
-          class="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500"
-        />
-
-        <p *ngIf="submitted && f['email'].errors" class="text-red-400 text-sm mt-1">
-          Enter a valid email address
-        </p>
-      </div>
-
-      <!-- Message -->
-      <div>
-        <label class="block mb-2 text-sm text-gray-300">Message</label>
-        <textarea
-          rows="5"
-          formControlName="message"
-          class="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500"
-        ></textarea>
-
-        <p *ngIf="submitted && f['message'].errors" class="text-red-400 text-sm mt-1">
-          Message must be at least 10 characters
-        </p>
-      </div>
-
-      <!-- Button -->
-      <button
-        type="submit"
-        class="w-full py-3 bg-blue-600 hover:bg-blue-700 transition rounded-lg font-medium"
-      >
-        Send Message
-      </button>
-
-    </form>
-
+    </div>
   </div>
 </section>

@@ -2,28 +2,132 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Fade In Animation */
-@layer utilities {
-  .animate-fade-in {
-    animation: fadeIn 1s ease-in-out;
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-}
-
-.card-hover {
-  @apply hover:shadow-blue-500/20;
+:root {
+  color-scheme: dark;
+  --bg: #08090b;
+  --surface: #101216;
+  --surface-strong: #15181d;
+  --surface-soft: #1d222b;
+  --border: rgba(148, 163, 184, 0.19);
+  --text: #f5f7fa;
+  --muted: #9299a6;
+  --accent: #7cb8ff;
+  --accent-strong: #4f8ef7;
+  --shadow-soft: 0 30px 80px rgba(15, 23, 42, 0.35);
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(79, 142, 247, 0.12), transparent 30%),
+    var(--bg);
+  color: var(--text);
+  font-family: Inter, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(circle at center, black 25%, transparent 100%);
+}
+
+@layer components {
+  .section-shell {
+    @apply mx-auto max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-tag {
+    @apply inline-flex items-center gap-2 rounded-full border border-blue-500/30 bg-blue-500/10 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.18em] text-blue-200;
+  }
+
+  .section-heading {
+    @apply text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl lg:text-5xl;
+  }
+
+  .section-copy {
+    @apply text-base leading-7 text-slate-300;
+  }
+
+  .glass-card {
+    @apply rounded-2xl border border-slate-700/80 bg-slate-900/80 shadow-[0_20px_60px_rgba(15,23,42,0.35)] backdrop-blur-sm;
+  }
+
+  .metric-card {
+    @apply glass-card flex min-h-[180px] flex-col justify-between p-6 transition duration-300 hover:-translate-y-1 hover:border-blue-500/40;
+  }
+
+  .tech-pill {
+    @apply inline-flex items-center rounded-full border border-slate-600 bg-slate-800/80 px-3 py-1.5 text-xs font-medium text-slate-200 transition duration-200 hover:border-blue-500/60 hover:text-blue-100;
+  }
+
+  .action-button {
+    @apply inline-flex items-center justify-center rounded-xl border border-slate-700 bg-slate-800/80 px-5 py-3 text-sm font-medium text-slate-100 transition duration-200 hover:border-blue-500/60 hover:bg-blue-500/10 hover:text-white;
+  }
+
+  .primary-button {
+    @apply inline-flex items-center justify-center rounded-xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-[0_18px_30px_rgba(37,99,235,0.35)] transition duration-200 hover:bg-blue-500;
+  }
+
+  .stack-node {
+    @apply flex items-center justify-center rounded-2xl border border-slate-700 bg-slate-900/80 px-4 py-3 text-sm font-medium text-slate-100 transition duration-300 hover:border-blue-500/60 hover:bg-blue-500/10;
+  }
+
+  .architecture-card {
+    @apply glass-card p-5 transition duration-300 hover:-translate-y-1 hover:border-blue-500/40;
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fadeUp 0.7s ease-out both;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

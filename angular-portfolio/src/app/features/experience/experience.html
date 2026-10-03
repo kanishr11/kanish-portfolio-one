@@ -1,54 +1,54 @@
-<section
-  id="experience"
-  class="py-20 bg-gray-950 text-white px-6"
->
-  <div class="max-w-5xl mx-auto">
-
-    <!-- Title -->
-    <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 animate-fade-in">
-      Experience
-    </h2>
-
-    <!-- Timeline -->
-    <div class="relative border-l border-gray-700">
-
-      <!-- Item -->
-      <div
-        *ngFor="let exp of experiences; let i = index"
-        class="mb-12 ml-6 animate-fade-in"
-      >
-
-        <!-- Dot -->
-        <span
-          class="absolute -left-3 flex items-center justify-center w-6 h-6 bg-blue-600 rounded-full ring-8 ring-gray-950"
-        ></span>
-
-        <!-- Card -->
-        <div class="bg-gray-900 p-6 rounded-xl shadow-lg hover:shadow-xl transition">
-
-          <h3 class="text-xl font-semibold">
-            {{ exp.role }}
-          </h3>
-
-          <p class="text-blue-400 text-sm mb-2">
-            {{ exp.company }}
-          </p>
-
-          <p class="text-gray-500 text-sm mb-4">
-            {{ exp.duration }}
-          </p>
-
-          <ul class="list-disc list-inside space-y-2 text-gray-400 text-sm">
-            <li *ngFor="let point of exp.description">
-              {{ point }}
-            </li>
-          </ul>
-
-        </div>
-
-      </div>
-
+<section id="experience" class="py-20 sm:py-24">
+  <div class="section-shell">
+    <div class="mb-12 max-w-2xl">
+      <span class="section-tag">Professional Experience</span>
+      <h2 class="section-heading mt-5">Production-focused engineering across ERP, APIs, and business systems.</h2>
     </div>
 
+    <div class="relative ml-2 border-l border-slate-700 pl-6 sm:pl-8">
+      @for (exp of experiences; track exp.company) {
+        <div class="relative mb-10">
+          <span class="absolute -left-[1.8rem] top-2 h-4 w-4 rounded-full border border-blue-400 bg-blue-500 shadow-[0_0_25px_rgba(59,130,246,0.8)]"></span>
+
+          <div class="glass-card p-6 sm:p-8">
+            <p class="text-xs uppercase tracking-[0.2em] text-blue-200">{{ exp.company }}</p>
+            <h3 class="mt-3 text-2xl font-semibold text-white">{{ exp.role }}</h3>
+            <p class="mt-2 text-sm text-slate-400">{{ exp.duration }}</p>
+
+            <ul class="mt-6 space-y-3 text-sm leading-6 text-slate-300">
+              @for (point of exp.description; track point) {
+                <li class="flex gap-3">
+                  <span class="mt-2 h-2 w-2 rounded-full bg-blue-400"></span>
+                  <span>{{ point }}</span>
+                </li>
+              }
+            </ul>
+          </div>
+        </div>
+      }
+    </div>
+
+    <div class="mt-16 grid gap-6 md:grid-cols-5">
+      <div class="architecture-card">
+        <p class="text-[10px] uppercase tracking-[0.2em] text-slate-400">Domain</p>
+        <h3 class="mt-4 text-lg font-semibold text-white">Trading</h3>
+      </div>
+      <div class="architecture-card">
+        <p class="text-[10px] uppercase tracking-[0.2em] text-slate-400">Domain</p>
+        <h3 class="mt-4 text-lg font-semibold text-white">Manufacturing</h3>
+      </div>
+      <div class="architecture-card">
+        <p class="text-[10px] uppercase tracking-[0.2em] text-slate-400">Domain</p>
+        <h3 class="mt-4 text-lg font-semibold text-white">Inventory</h3>
+      </div>
+      <div class="architecture-card">
+        <p class="text-[10px] uppercase tracking-[0.2em] text-slate-400">Domain</p>
+        <h3 class="mt-4 text-lg font-semibold text-white">Accounts</h3>
+      </div>
+      <div class="architecture-card">
+        <p class="text-[10px] uppercase tracking-[0.2em] text-slate-400">Domain</p>
+        <h3 class="mt-4 text-lg font-semibold text-white">Reports</h3>
+      </div>
+    </div>
   </div>
 </section>

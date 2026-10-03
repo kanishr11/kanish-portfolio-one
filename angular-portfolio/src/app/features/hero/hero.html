@@ -1,56 +1,58 @@
-<section id="home" class="min-h-screen flex items-center justify-center
-    bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 text-white px-6"
->
-  <div class="text-center max-w-3xl animate-fade-in">
+<section id="home" class="relative overflow-hidden pt-28 pb-16 sm:pt-32 lg:pt-36">
+  <div class="section-shell grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+    <div class="animate-fade-up">
+      <span class="section-tag">Associate Software Engineer</span>
 
-    <!-- Name -->
-    <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">
-      Hi, I'm <span class="text-blue-500">Kanish R</span>
-    </h1>
+      <h1 class="mt-6 max-w-xl text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
+        Building production-grade business applications.
+      </h1>
 
-    <!-- Role -->
-    <h2 class="text-lg md:text-2xl text-gray-400 mb-6">
-      Full Stack Developer &bull; Java &amp; Angular
-    </h2>
+      <p class="mt-5 max-w-2xl text-lg text-slate-300">
+        Angular + Java + Spring Boot + PostgreSQL
+      </p>
 
-    <!-- Description -->
-    <p class="text-gray-400 mb-8 leading-relaxed">
-      Associate Software Development Engineer with experience
-      in building scalable web applications using Angular and Spring Boot.
-      Currently working at TekFilo Innovation, contributing to enterprise application development,
-      feature implementation, and production deployments.
-    </p>
+      <p class="mt-6 max-w-xl text-base leading-7 text-slate-300">
+        Associate Software Engineer with 1.4+ years of experience contributing to production ERP applications across frontend, backend, API, and database layers.
+      </p>
 
-    <!-- Buttons -->
-    <div class="flex flex-col sm:flex-row justify-center gap-4">
+      <div class="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
+        <a href="#experience" class="primary-button">View Experience</a>
+        <a href="assets/Kanish_R_Full_Stack_Developer_Resume.pdf" target="_blank" rel="noreferrer" class="action-button">Download Resume</a>
+      </div>
 
-      <a
-        href="#projects"
-        class="px-6 py-3 bg-blue-600 hover:bg-blue-700 transition rounded-lg shadow-lg"
-      >
-        View Projects
-      </a>
-
-      <a
-        href="#contact"
-        class="px-6 py-3 border border-gray-600 hover:border-white transition rounded-lg"
-      >
-        Contact Me
-      </a>
-
-      <a href="assets/Kanish_R_Resume.docx" download
-        class="px-6 py-3 bg-gray-800 hover:bg-gray-700 rounded-lg"
-      >
-        Download Resume
-      </a>
-
-      <a href="assets/Kanish_R_Resume.docx" target="_blank"
-        class="px-6 py-3 bg-gray-800 hover:bg-gray-700 rounded-lg inline-block"
-      >
-        Preview Resume
-      </a>
-
+      <div class="mt-8 flex flex-wrap items-center gap-4 text-sm text-slate-300">
+        <a href="https://github.com/kanishr11" target="_blank" rel="noreferrer" class="transition hover:text-white">GitHub</a>
+        <a href="https://linkedin.com/in/kanish11" target="_blank" rel="noreferrer" class="transition hover:text-white">LinkedIn</a>
+        <a href="mailto:kanishr110@gmail.com" class="transition hover:text-white">Email</a>
+      </div>
     </div>
 
+    <div class="relative animate-fade-up">
+      <div class="glass-card relative overflow-hidden p-6 sm:p-8">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(79,142,247,0.18),transparent_35%)]"></div>
+
+        <div class="relative">
+          <div class="mb-5 flex items-center justify-between">
+            <p class="text-xs uppercase tracking-[0.22em] text-slate-400">System Flow</p>
+            <span class="rounded-full border border-emerald-500/40 bg-emerald-500/10 px-2 py-1 text-[10px] uppercase tracking-[0.18em] text-emerald-300">Live</span>
+          </div>
+
+          <div class="grid gap-3 sm:grid-cols-2">
+            <div class="stack-node animate-float">Angular</div>
+            <div class="stack-node">TypeScript</div>
+            <div class="stack-node">REST API</div>
+            <div class="stack-node">Spring Boot</div>
+            <div class="stack-node">PostgreSQL</div>
+            <div class="stack-node">ERP Modules</div>
+          </div>
+
+          <div class="mt-7 flex items-center justify-center gap-3 text-slate-400">
+            <span class="h-px flex-1 bg-slate-700"></span>
+            <span class="text-[10px] uppercase tracking-[0.2em] text-slate-400">Frontend → API → Backend → Data</span>
+            <span class="h-px flex-1 bg-slate-700"></span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
